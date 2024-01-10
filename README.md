@@ -1,4 +1,4 @@
-# FindDominationNumber 
+# LonelyEdges
 This repository contains a program created for the article "J. Goedgebeur, D. Mattiolo, G. Mazzuoccolo, J. Renders, I. H. Wolf. Non-double covered cubic graphs, manuscript."
 
 The program uses McKay's graph6 format to read and write graphs. See <http://users.cecs.anu.edu.au/~bdm/data/formats.txt>. 
