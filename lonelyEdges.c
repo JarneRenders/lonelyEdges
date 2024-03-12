@@ -5,6 +5,7 @@
  *
  */
 
+#include <limits.h>
 #define USAGE "Usage: ./lonelyEdges [-o#|-d|-a] [-vmh]"
 #define HELPTEXT "Helptext: Program for finding the lonely edges of a graph.\n\
 \n\
@@ -78,14 +79,14 @@ void writeToG6(bitset adjacencyList[], int numberOfVertices) {
     else if(numberOfVertices <= 258047) {
         graphString[pointer++] = 63 + 63;
         for(int i = 2; i >= 0; i--) {
-            graphString[pointer++] = (char) (numberOfVertices >> i*6) + 63;
+            graphString[pointer++] = (char) ((numberOfVertices >> i*6) & 63) + 63;
         }
     }
-    else if(numberOfVertices <= 68719476735) {
+    else if(numberOfVertices <= INT_MAX) {
         graphString[pointer++] = 63 + 63;
         graphString[pointer++] = 63 + 63;
         for(int i = 5; i >= 0; i--) {
-            graphString[pointer++] = (char) (numberOfVertices >> i*6) + 63;
+            graphString[pointer++] = (char) ((numberOfVertices >> i*6) & 63) + 63;
         }
     }
     else {
